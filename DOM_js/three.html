@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+</head>
+<body style="background-color: #000000da; color: white;">
+    <div style="margin-top: 20px; margin-bottom: 30px; background-color: red;">
+        This div has 20px margin above and 30px margin below.
+    </div>
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = 'main';
+    div.id = Math.round(Math.random() *10 + 1);
+    div.setAttribute('title', 'This is a div');
+    div.style.backgroundColor = 'grey';
+    div.style.width = '200px';
+    div.style.padding = '20px';
+    div.style.borderRadius = '10px';
+    div.style.textAlign = 'center';
+    div.style.margin = '50px auto'; // Centering the div horizontally
+
+    //simpler to edit
+    div.innerHTML = '<h1>Welcome to DOM Manipulation</h1>';
+    const addTwo = document.createTextNode('chai aur code');
+
+
+    document.body.appendChild(div); //making the div appear in the body
+    div.appendChild(addTwo); //adding text to the div
+</script>
+</html>

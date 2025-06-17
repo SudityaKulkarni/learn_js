@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 4</title>
+</head>
+<body style="background-color: #000000da; color: white;">
+    <ul class="language"></ul>
+
+
+
+
+</body>
+<script>
+    function addLanguage(lang){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lang));
+        li.style.color = 'red';
+        document.querySelector('.language').appendChild(li);
+    }
+
+    const languages = ['JavaScript', 'Python', 'Java', 'C++', 'Ruby'];
+    languages.forEach((lang) => {
+        addLanguage(lang);
+    })
+
+    //editing values 
+    const secondLang = document.querySelector('li:nth-child(2)');
+    const newli = document.createElement('li');
+    newli.textContent = 'goLang'
+    newli.style.color = 'blue'
+    secondLang.replaceWith(newli) // replacing the second language with goLang
+
+    //another way to edit values
+    const firstlang = document.querySelector('li:nth-child(1)');
+    firstlang.textContent = 'TypeScript'; // changing the first language to TypeScript
+
+    //another way
+    const thirdLang = document.querySelector('li:nth-child(3)');
+    thirdLang.outerHTML = '<li style="color: yellow; font-weight: bold;">TypeScript</li>'; // changing the third language to bold yellow text
+
+    //remove a list element
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove(); // removing the last language from the list
+
+</script>
+    
+</html>
