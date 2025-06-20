@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events 2</title>
+</head>
+<body>
+    <h1>Roland Garros</h1>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+</body>
+<script>
+    const printName = function(){
+        console.log("Roger");
+    }
+
+    document.querySelector('#start').addEventListener('click',function(){
+        helper = setInterval(printName,1000);
+    })
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(helper);
+        console.log("STOPPED");
+    })
+    
+</script>
+</html>
