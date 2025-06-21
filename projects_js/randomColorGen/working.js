@@ -1,5 +1,6 @@
 //generate random color logic (did this by myself lesgoooo!!)
 
+isRunning = false;
 const randomColor = function () {
     const hex = "0123456789ABCDEF";
     let color = '#';
@@ -9,19 +10,20 @@ const randomColor = function () {
         color += hex[Math.floor(Math.random() * 16)];
     }
 
-    //return color;
     document.querySelector('body').style.backgroundColor = color;
 };
 
-
-//console.log(randomColor());
-
 //functionality for start 
 document.querySelector('#start').addEventListener('click',function(){
-    change = setInterval(randomColor,1000);
+    if(!isRunning)
+    {
+        change = setInterval(randomColor,1000);
+        isRunning = true;
+    }
 })
 
 //fucntionality for stop button
 document.querySelector('#stop').addEventListener('click',function(){
     clearInterval(change);
+    isRunning = false;
 })
