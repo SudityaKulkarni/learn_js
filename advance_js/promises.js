@@ -47,7 +47,7 @@ promiseFour.then(function(user){
 })*/
 
 
-const promiseFive = new Promise(function(resolve,reject){
+/*const promiseFive = new Promise(function(resolve,reject){
     setTimeout(() => {
         let error = true;
         if(!error)
@@ -66,6 +66,32 @@ async function consumePromiseFive(){
         console.log(error)
     }     
 }
-    
 
-consumePromiseFive()
+consumePromiseFive()*/
+
+
+//using async-await with fetch instead of promises 
+/*async function getAllUsers(){
+    try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/users') //fetch return a promise
+        const data = await response.json()  //it takes time to convert the response into json hence we use await
+        console.log(data)
+    }
+    catch(error){
+        console.log("E: ",error)
+    }
+}
+
+getAllUsers()*/
+
+//directly using fetch as it returns a promise
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data)
+})
+.catch((error) => {
+    console.log(error)
+})
